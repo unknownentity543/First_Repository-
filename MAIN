@@ -1,1 +1,26 @@
+import random
 
+answers = [
+    "Yes definitely.",
+    "Ask again later.",
+    "Without a doubt.",
+    "Very doubtful.",
+    "Most likely.",
+    "Reply hazy, try again.",
+    "My sources say no.",
+    "Outlook good.",
+    "Signs point to yes.",
+    "Concentrate and ask again."
+]
+
+print("Magic 8 Ball")
+print("Type your question, or type 'quit' to exit.")
+
+while True:
+    question = input("Question: ")
+    
+    if question.lower() == "quit":
+        print("Goodbye!")
+        break
+    
+    print(random.choice(answers))
