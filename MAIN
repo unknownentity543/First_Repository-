@@ -13,14 +13,38 @@ answers = [
     "Concentrate and ask again."
 ]
 
-print("Magic 8 Ball")
-print("Type your question, or type 'quit' to exit.")
+ball = r'''
+              .-""""-.
+            .'        '.
+           /            \\
+          ;   .------.   ;
+          |  /        \\  |
+          | |  MAGIC   | |
+          | |    8     | |
+          | |   BALL   | |
+          |  \\________/  |
+          ;              ;
+           \\            /
+            '.        .'
+              '-.__.-'
+'''
+
+print(ball)
+print("Ask the Magic 8 Ball a question (or type 'quit' to exit).")
 
 while True:
-    question = input("Question: ")
-    
-    if question.lower() == "quit":
-        print("Goodbye!")
+    question = input("\nYour question: ").strip()
+
+    if question.lower() in {"quit", "exit"}:
+        print("The Magic 8 Ball says: Goodbye!")
         break
-    
-    print(random.choice(answers))
+
+    if not question:
+        print("Please ask a question first!")
+        continue
+
+    answer = random.choice(answers)
+    print("\nThe Magic 8 Ball says:")
+    print("       .----------------------.")
+    print(f"       | {answer:<20} |")
+    print("       '----------------------'")
